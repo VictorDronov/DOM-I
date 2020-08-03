@@ -30,8 +30,10 @@ const siteContent = {
   "main-content-img": {
     "middle-img-src": "img/mid-page-accent.jpg",
   },
-  "contact": {
+  "contactTitle":{
     "contact-h4" : "Contact",
+  },
+  "contact": {
     "address" : "123 Way 456 Street Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
@@ -81,4 +83,17 @@ mainImg.src = 'img/mid-page-accent.jpg'
 
 
 // Contact section 
+const contacth4 = document.querySelector(".contact h4")
+// console.log(contacth4)
+contacth4.textContent = "Contact"
+let contactInfo = document.querySelectorAll('.contact p ')
+// console.log(contactInfo)
+let infoContact = Object.values(siteContent["contact"])
+// console.log(infoContact)
+contactInfo.forEach((p,index)=> p.textContent = infoContact[index])
 
+// Footer 
+
+let foot = document.querySelector("footer p")
+console.log(foot)
+foot.textContent = "Copyright Great Idea! 2018"
