@@ -51,18 +51,21 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 // console.log(siteContent)
 // This is the navigation section 
 const navigation = document.querySelectorAll(".container header nav a")
+// console.log(navigation)
 
 let links = Object.values(siteContent.nav)// this gathers all the nav links 
 navigation.forEach((link,index) =>{
   link.textContent = links[index]
 })
-
+navigation.forEach((link,index)=>{
+  link.style.color = 'green'
+})
 // CTA Section
 
 const section = document.querySelector("h1")
 const button = document.querySelector('button')
 const ctaImg =document.querySelector('#cta-img')
-section.innerHTML = `DOM<br> IS<br> AWSOME`
+section.innerHTML = `DOM<br> IS<br> AWESOME`
 button.textContent = 'Get Started'
 ctaImg.src = 'img/header-img.png'
 
@@ -95,5 +98,23 @@ contactInfo.forEach((p,index)=> p.textContent = infoContact[index])
 // Footer 
 
 let foot = document.querySelector("footer p")
-console.log(foot)
+// console.log(foot)
 foot.textContent = "Copyright Great Idea! 2018"
+
+
+// Adding items 
+
+const newItem = document.createElement("a")
+newItem.textContent = "Item 1"
+newItem.href = "#"
+
+const newItem2 = document.createElement("a")
+newItem2.textContent = "Item 2"
+newItem2.href = "#"
+
+const nav = document.querySelector('nav')
+nav.appendChild(newItem)
+nav.append(newItem2)
+
+newItem.style.color = 'green'
+newItem2.style.color = 'green'
